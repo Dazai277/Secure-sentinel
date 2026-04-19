@@ -45,7 +45,7 @@
 <body class="bg-black text-white selection:bg-primary selection:text-primary-foreground font-sans overflow-x-hidden">
 <!-- loading screen yaha se strt hai-->
 <style>
-#ld-preloader {
+#idPloader {
   position: fixed;
   inset: 0;
   z-index: 999999;
@@ -58,7 +58,7 @@
 }
 
 
-#ld-pre-grid {
+#idPreGrid {
   position: absolute;
   inset: 0;
   background-image:
@@ -69,14 +69,14 @@
 }
 
 /* Corner brackets */
-.ld-pre-corner { position:absolute; width:26px; height:26px; }
+.idpReCrnr { position:absolute; width:26px; height:26px; }
 #ld-pc-tl { top:22px; left:22px;    border-top:1.5px solid rgba(0,255,128,0.45); border-left:1.5px solid rgba(0,255,128,0.45); }
 #ld-pc-tr { top:22px; right:22px;   border-top:1.5px solid rgba(0,255,128,0.45); border-right:1.5px solid rgba(0,255,128,0.45); }
 #ld-pc-bl { bottom:22px; left:22px; border-bottom:1.5px solid rgba(0,255,128,0.45); border-left:1.5px solid rgba(0,255,128,0.45); }
 #ld-pc-br { bottom:22px; right:22px;border-bottom:1.5px solid rgba(0,255,128,0.45); border-right:1.5px solid rgba(0,255,128,0.45); }
 
 /* ── SHIELD ANIMATION ── */
-#ld-shield-wrap {
+#ld-shieidwrap {
   position: relative;
   width: 120px;
   height: 120px;
@@ -86,7 +86,7 @@
 }
 
 /* Outer rotating ring */
-#ld-ring-outer {
+#idrngOutr {
   position: absolute;
   inset: 0;
   border-radius: 50%;
@@ -98,7 +98,7 @@
 }
 
 /* Inner rotating ring reverse */
-#ld-ring-inner {
+#idrngInr {
   position: absolute;
   inset: 14px;
   border-radius: 50%;
@@ -109,7 +109,7 @@
 }
 
 /* Glow pulse behind shield */
-#ld-shield-glow {
+#idshglw {
   position: absolute;
   inset: 20px;
   border-radius: 50%;
@@ -126,8 +126,9 @@
   50%     { transform: scale(1.3); opacity: 1; }
 }
 
-/* Shield SVG */
-#ld-shield-svg {
+
+#iidShdSv
+ {
   position: relative;
   z-index: 2;
   animation: ldShieldPulse 2s ease-in-out infinite;
@@ -138,7 +139,7 @@
   50%     { filter: drop-shadow(0 0 20px rgba(0,255,128,0.9)) drop-shadow(0 0 40px rgba(0,255,128,0.4)); }
 }
 
-/* Orbiting dot */
+
 #ld-orbit {
   position: absolute;
   inset: -6px;
@@ -157,13 +158,12 @@
   box-shadow: 0 0 10px #00ff80, 0 0 20px rgba(0,255,128,0.5);
 }
 
-/* ── BRAND NAME ── */
-#ld-brand {
+#idBrnd {
   text-align: center;
   position: relative;
   z-index: 2;
 }
-#ld-brand .secure {
+#idBrnd .secure {
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(22px, 4vw, 42px);
   font-weight: 900;
@@ -172,7 +172,7 @@
   text-transform: uppercase;
   line-height: 1;
 }
-#ld-brand .sentinel {
+#idBrnd .sentinel {
   font-family: 'Orbitron', sans-serif;
   font-size: clamp(22px, 4vw, 42px);
   font-weight: 900;
@@ -187,7 +187,7 @@
   0%,100% { text-shadow: 0 0 20px rgba(0,255,128,0.5); }
   50%     { text-shadow: 0 0 40px rgba(0,255,128,1), 0 0 80px rgba(0,255,128,0.4); }
 }
-#ld-brand .divider {
+#idBrnd .divider {
   width: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, #00ff80, transparent);
@@ -199,31 +199,31 @@
   to { width: clamp(120px, 20vw, 240px); }
 }
 
-/* ── PROGRESS BAR ── */
-#ld-prog-wrap {
+
+#idWrp {
   width: clamp(200px, 30vw, 300px);
   position: relative;
   z-index: 2;
 }
-#ld-prog-top {
+#idTop {
   display: flex;
   justify-content: space-between;
   margin-bottom: 6px;
 }
-#ld-prog-msg {
+#idMsg{
   font-family: 'Space Mono', monospace;
   font-size: 8px;
   letter-spacing: 2px;
   color: rgba(0,255,128,0.5);
   text-transform: uppercase;
 }
-#ld-prog-pct {
+#idPct {
   font-family: 'Orbitron', sans-serif;
   font-size: 9px;
   font-weight: 700;
   color: #00ff80;
 }
-#ld-prog-track {
+#idTrack {
   width: 100%;
   height: 2px;
   background: rgba(0,255,128,0.08);
@@ -231,7 +231,7 @@
   overflow: hidden;
   position: relative;
 }
-#ld-prog-fill {
+#idFill {
   height: 100%;
   width: 0%;
   background: linear-gradient(90deg, #00ff80, #00ffaa);
@@ -241,7 +241,7 @@
   position: relative;
 }
 /* Moving shimmer on bar */
-#ld-prog-fill::after {
+#idFill::after {
   content: '';
   position: absolute;
   top: 0; right: -20px;
@@ -256,13 +256,13 @@
 }
 
 /* 3 dots */
-#ld-dots {
+#idDots {
   display: flex;
   justify-content: center;
   gap: 7px;
   margin-top: 14px;
 }
-.ld-dot {
+.idDot{
   width: 4px; height: 4px;
   border-radius: 50%;
   background: #00ff80;
@@ -277,20 +277,21 @@
 }
 </style>
 
-<div id="ld-preloader">
-  <div id="ld-pre-grid"></div>
-  <div class="ld-pre-corner" id="ld-pc-tl"></div>
-  <div class="ld-pre-corner" id="ld-pc-tr"></div>
-  <div class="ld-pre-corner" id="ld-pc-bl"></div>
-  <div class="ld-pre-corner" id="ld-pc-br"></div>
+<div id="idPloader">
+  <div id="idPreGrid"></div>
+  <div class="idpReCrnr" id="ld-pc-tl"></div>
+  <div class="idpReCrnr" id="ld-pc-tr"></div>
+  <div class="idpReCrnr" id="ld-pc-bl"></div>
+  <div class="idpReCrnr" id="ld-pc-br"></div>
 
 
-  <div id="ld-shield-wrap">
-    <div id="ld-ring-outer"></div>
-    <div id="ld-ring-inner"></div>
-    <div id="ld-shield-glow"></div>
+  <div id="ld-shieidwrap">
+    <div id="idrngOutr"></div>
+    <div id="idrngInr"></div>
+    <div id="idshglw"></div>
     <div id="ld-orbit"><div id="ld-orbit-dot"></div></div>
-    <svg id="ld-shield-svg" width="52" height="58" viewBox="0 0 52 58" fill="none">
+    <svg id="iidShdSv
+" width="52" height="58" viewBox="0 0 52 58" fill="none">
       <path d="M26 2 L50 12 L50 30 Q50 46 26 56 Q2 46 2 30 L2 12 Z"
             fill="rgba(0,255,128,0.06)"
             stroke="#00ff80"
@@ -321,22 +322,22 @@
   </div>
 
   
-  <div id="ld-brand">
+  <div id="idBrnd">
     <div class="secure">SECURE</div>
     <div class="divider"></div>
     <div class="sentinel">SENTINEL</div>
   </div>
 
  
-  <div id="ld-prog-wrap">
-    <div id="ld-prog-top">
+  <div id="idWrp">
+    <div id="idTop">
       <div id="ld-prog-msg">INITIALIZING...</div>
-      <div id="ld-prog-pct">0%</div>
+      <div id="idPct">0%</div>
     </div>
-    <div id="ld-prog-track">
-      <div id="ld-prog-fill"></div>
+    <div id="idTrack">
+      <div id="idFill"></div>
     </div>
-    <div id="ld-dots">
+    <div id="idDots">
       <div class="ld-dot"></div>
       <div class="ld-dot"></div>
       <div class="ld-dot"></div>
@@ -346,10 +347,10 @@
 
 <script>
 (function(){
-  const fill = document.getElementById('ld-prog-fill');
-  const pct  = document.getElementById('ld-prog-pct');
+  const fill = document.getElementById('idFill');
+  const pct  = document.getElementById('idPct');
   const msg  = document.getElementById('ld-prog-msg');
-  const pre  = document.getElementById('ld-preloader');
+  const pre  = document.getElementById('idPloader');
 
   const msgs = [
     'INITIALIZING...',
@@ -385,7 +386,7 @@
 <style>
 * { box-sizing: border-box; }
 
-#ld-wrap {
+#idwrap {
   position: fixed;
   inset: 0;
   z-index: 99999;
@@ -394,14 +395,14 @@
 }
 
 
-#ld-bg {
+#idbG {
   position: absolute;
   inset: 0;
   background: #000;
 }
 
 
-#ld-text-wrap {
+#idTwrap {
   position: absolute;
   inset: 0;
   display: flex;
@@ -517,13 +518,13 @@
 body.ld-active { overflow: hidden; }
 
 
-body.ld-active > *:not(#ld-preloader):not(#ld-wrap) {
+body.ld-active > *:not(#idPloader):not(#idwrap) {
   visibility: hidden;
 }
 </style>
 
-<div id="ld-wrap">
-  <div id="ld-bg"></div>
+<div id="idwrap">
+  <div id="idbG"></div>
   <div id="ld-grid"></div>
   <div id="ld-glow"></div>
   <div id="ld-scan"></div>
@@ -535,7 +536,7 @@ body.ld-active > *:not(#ld-preloader):not(#ld-wrap) {
   <div class="ld-corner" id="ld-c-br"></div>
 
 
-  <div id="ld-text-wrap">
+  <div id="idTwrap">
     <div id="ld-secure">SECURE</div>
     <div id="ld-line"></div>
     <div id="ld-sentinel">SENTINEL</div>
@@ -610,7 +611,7 @@ body.ld-active > *:not(#ld-preloader):not(#ld-wrap) {
   }, 2.1);
 
  
-  tl.to('#ld-bg', {
+  tl.to('#idbG', {
     opacity: 0, duration: 0.5, ease: 'power2.in'
   }, 2.6);
   tl.to('#ld-grid', {
@@ -636,10 +637,10 @@ body.ld-active > *:not(#ld-preloader):not(#ld-wrap) {
 
   tl.add(()=>{
     document.body.classList.remove('ld-active');
-document.querySelectorAll('body > *:not(#ld-wrap)').forEach(el => {
+document.querySelectorAll('body > *:not(#idwrap)').forEach(el => {
   el.style.visibility = 'visible';
 });
-    document.getElementById('ld-wrap').style.display = 'none';
+    document.getElementById('idwrap').style.display = 'none';
 
     
     gsap.from('nav', {
