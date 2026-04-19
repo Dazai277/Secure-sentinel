@@ -1,9 +1,8 @@
-// Initialize Lucide Icons
+
 lucide.createIcons();
 
-// ============================================================
-// 3D BACKGROUND — Three.js
-// ============================================================
+
+
 (function() {
     const canvas = document.querySelector('#bg-canvas');
     if (!canvas) return;
@@ -17,7 +16,7 @@ lucide.createIcons();
     camera.position.set(0, 0, 30);
     scene.fog = new THREE.FogExp2(0x000000, 0.012);
 
-    // Lights
+   
     scene.add(new THREE.AmbientLight(0x00ff80, 0.1));
     const pl1 = new THREE.PointLight(0x00ff80, 4, 120);
     pl1.position.set(-20, 30, 20);
@@ -31,19 +30,18 @@ lucide.createIcons();
     const lineMat  = (op=0.12, col=green) => new THREE.LineBasicMaterial({ color:col, transparent:true, opacity:op });
     const pointMat = (sz=0.1, op=0.35, col=green) => new THREE.PointsMaterial({ size:sz, color:col, transparent:true, opacity:op, sizeAttenuation:true });
 
-    // 1. TORUS KNOT — main hero shape
+    
     const tk = new THREE.Mesh(new THREE.TorusKnotGeometry(10, 1.8, 220, 18), wireMat(0.065));
     scene.add(tk);
 
-    // 2. INNER TORUS KNOT
     const tk2 = new THREE.Mesh(new THREE.TorusKnotGeometry(6, 0.9, 140, 12, 3, 5), wireMat(0.05, cyan));
     scene.add(tk2);
 
-    // 3. ICOSAHEDRON centre
+    
     const ico = new THREE.Mesh(new THREE.IcosahedronGeometry(4.5, 1), wireMat(0.07));
     scene.add(ico);
 
-    // 4. THREE HEX/CIRCLE RINGS
+   
     const rings = new THREE.Group();
     [9, 13, 17].forEach((r, i) => {
         const ring = new THREE.Mesh(
@@ -56,7 +54,6 @@ lucide.createIcons();
     rings.position.z = -14;
     scene.add(rings);
 
-    // 5. NETWORK NODE GRAPH (cybersecurity)
     const netGroup = new THREE.Group();
     const nodePos = [
         [0,0,0],[5,3,0],[-5,2,0],[5,-3,-1],[-5,-3,-1],
@@ -78,7 +75,7 @@ lucide.createIcons();
     netGroup.position.set(-16, -4, -5);
     scene.add(netGroup);
 
-    // 6. SHIELD WIREFRAME
+    
     const shieldGrp = new THREE.Group();
     const shieldArc = new THREE.Mesh(
         new THREE.TorusGeometry(5, 0.05, 6, 40, Math.PI),
@@ -95,7 +92,7 @@ lucide.createIcons();
     shieldGrp.position.set(18, 5, -10);
     scene.add(shieldGrp);
 
-    // 7. LOCK WIREFRAME
+    
     const lockGrp = new THREE.Group();
     lockGrp.add(new THREE.Mesh(new THREE.BoxGeometry(2.2, 1.8, 0.3), wireMat(0.09)));
     const shackle = new THREE.Mesh(
@@ -107,7 +104,6 @@ lucide.createIcons();
     lockGrp.position.set(-20, 9, -7);
     scene.add(lockGrp);
 
-    // 8. DATA STREAM LINES (vertical)
     const streamGrp = new THREE.Group();
     for (let i=0; i<14; i++) {
         const x = (Math.random()-0.5)*44;
@@ -121,7 +117,7 @@ lucide.createIcons();
     }
     scene.add(streamGrp);
 
-    // 9. STAR PARTICLES — dense field
+    
     const pGeo = new THREE.BufferGeometry();
     const pArr = new Float32Array(9000*3);
     for (let i=0; i<9000; i++) {
@@ -133,7 +129,7 @@ lucide.createIcons();
     const particles = new THREE.Points(pGeo, pointMat(0.11, 0.32));
     scene.add(particles);
 
-    // 10. BRIGHT ACCENT PARTICLES
+   
     const aGeo = new THREE.BufferGeometry();
     const aArr = new Float32Array(600*3);
     for (let i=0; i<600; i++) {
@@ -145,7 +141,6 @@ lucide.createIcons();
     const accents = new THREE.Points(aGeo, pointMat(0.25, 0.65, cyan));
     scene.add(accents);
 
-    // 11. FLOATING SHARDS
     const shards = [];
     for (let i=0; i<24; i++) {
         const geo = i%3===0
@@ -159,7 +154,7 @@ lucide.createIcons();
         scene.add(m); shards.push(m);
     }
 
-    // 12. MOVING GRID
+    
     const gridGrp = new THREE.Group();
     [{y:-26,op:0.04},{y:26,op:0.03}].forEach(({y,op}) => {
         const g = new THREE.GridHelper(360, 72, green, green);
@@ -169,7 +164,7 @@ lucide.createIcons();
     });
     scene.add(gridGrp);
 
-    // ── ANIMATE ──
+    
     const clock = new THREE.Clock();
     function animate() {
         requestAnimationFrame(animate);
@@ -227,9 +222,6 @@ lucide.createIcons();
 })();
 
 
-// ============================================================
-// MOBILE MENU
-// ============================================================
 const menuBtn    = document.querySelector('#mobile-menu-btn');
 const mobileMenu = document.querySelector('#mobile-menu');
 menuBtn.addEventListener('click', () => {
